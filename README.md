@@ -87,18 +87,12 @@ TradingView Widgets
 ```
 StockSense/
 │
-├── data/
-│   ├── processed/
-│   │   └── featured_data.csv        # Final dataset used for training
-│   └── sp500_tickers.csv            # List of S&P 500 stock symbols
 │
 ├── instance/
 │   └── users.db                     # SQLite database for user authentication
 │
 ├── models/
 │   └── xgboost_model.pkl            # Trained XGBoost model file
-│
-├── nse_stock_data/                  # Raw/Processed NSE-specific CSVs
 │
 ├── plots/                           # Generated visualizations (e.g., market regimes)
 │
@@ -115,8 +109,6 @@ StockSense/
 │   ├── css/                         # Custom stylesheets (style.css)
 │   └── js/                          # Frontend scripts
 │
-├── stock_data/                      # General historical stock data storage
-│
 ├── templates/                       # Flask HTML templates (Jinja2)
 │   ├── admin_panel.html
 │   ├── dashboard.html
@@ -127,11 +119,8 @@ StockSense/
 │   └── register.html
 │
 ├── app.py                           # Main Flask application entry point
-├── feature_nse.py                   # NSE-specific technical indicators
-├── fetch_nse.py                     # NSE data retrieval script
 ├── models.py                        # SQLAlchemy database models
 ├── nse_stocks.csv                   # CSV containing NSE stock list
-├── nse_tickers.py                   # Script for managing NSE ticker symbols
 ├── requirements.txt                 # Project library dependencies
 └── README.md                        # Project documentation
 ```
