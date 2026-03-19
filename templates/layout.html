@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>StockSense</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+
+      <div class="popup {{ category }}">
+        {{ message }}
+      </div>
+
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<div class="app">
+
+<!-- <div class="sidebar">
+
+<h2>📈 StockSense</h2>
+
+<a href="/dashboard">Dashboard</a>
+<a href="/predict_page">Predict</a>
+
+{% if current_user.role == "admin" %}
+<a href="/admin">Admin</a>
+{% endif %}
+
+<a href="/logout">Logout</a>
+
+</div> -->
+
+<div class="main">
+
+{% block content %}
+{% endblock %}
+
+</div>
+
+</div>
+
+</body>
+</html>
+
+<script>
+setTimeout(() => {
+  document.querySelectorAll('.flash').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateX(100%)';
+    setTimeout(() => el.remove(), 300);
+  });
+}, 3000);
+</script>
